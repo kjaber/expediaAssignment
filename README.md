@@ -10,7 +10,7 @@ https://gist.github.com/Jun-Dai/6101aadf80e47e6c46a3
 https://github.com/kjaber/expediahotelsfinder.git
 
 ### Heroku Link:
-https://expediahotelsfinder.herokuapp.com/
+https://kamiliaexpediaassignment.herokuapp.com/
 
 
 ## Language and technologies
