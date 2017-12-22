@@ -35,7 +35,8 @@ public class OffersTestCase extends TestCase {
 		hotelInfo.setHotelDestinationRegionID(10405);
 		hotelInfo.setHotelGuestReviewRating(2.73);
 		hotelInfo.setHotelId(10980182);
-		hotelInfo.setHotelImageUrl("https://images.trvl-media.com/hotels/11000000/10990000/10980200/10980182/10980182_143_t.jpg");
+		hotelInfo.setHotelImageUrl(
+				"https://images.trvl-media.com/hotels/11000000/10990000/10980200/10980182/10980182_143_t.jpg");
 		hotelInfo.setHotelLatitude(25.954881);
 		hotelInfo.setHotelLongDestination("Sunny Isles Beach,FL,USA");
 		hotelInfo.setHotelLongitude(-80.120417);
@@ -55,7 +56,7 @@ public class OffersTestCase extends TestCase {
 		hotelPricingInfo.setPercentSavings(76.8);
 		hotelPricingInfo.setTotalPriceValue(720.48);
 		HotelUrgencyInfo hotelUrgencyInfo = new HotelUrgencyInfo();
-		
+
 		hotelUrgencyInfo.setAirAttachEnabled(false);
 		hotelUrgencyInfo.setAirAttachRemainingTime(0);
 		hotelUrgencyInfo.setAlmostSoldStatus("ALMOST_SOLD");
@@ -64,18 +65,17 @@ public class OffersTestCase extends TestCase {
 		hotelUrgencyInfo.setNumberOfPeopleBooked(0);
 		hotelUrgencyInfo.setNumberOfPeopleViewing(7);
 		hotelUrgencyInfo.setNumberOfRoomsLeft(11);
-		
+
 		HotelUrls hotelUrls = new HotelUrls();
 		hotelUrls.setHotelInfositeUrl("https%3A%2F%2Fwww.expedia.com%2Fgo%2Fhotel%2Finfo%2F10980182%2F2018-01-25%2F2018-01-29");
 		hotelUrls.setHotelSearchResultUrl("https%3A%2F%2Fwww.expedia.com%2Fgo%2Fhotel%2Fsearch%2FDestination%2F2018-01-25%2F2018-01-29%3FSearchType%3DDestination%26CityName%3DSunny+Isles+Beach%26RegionId%3D178286%26Selected%3D10980182");
-		int [] startDate = {2018,1,25};
-		int [] endDate = {2018,1,29};
+		int[] startDate = { 2018, 1, 25 };
+		int[] endDate = { 2018, 1, 29 };
 		OfferDateRange offerDateRange = new OfferDateRange();
 		offerDateRange.setLengthOfStay(4);
 		offerDateRange.setTravelEndDate(endDate);
 		offerDateRange.setTravelStartDate(startDate);
-		
-		
+
 		Hotel hotel = new Hotel();
 		hotel.setDestination(destination);
 		hotel.setHotelInfo(hotelInfo);
@@ -84,9 +84,7 @@ public class OffersTestCase extends TestCase {
 		hotel.setHotelUrls(hotelUrls);
 		hotel.setOfferDateRange(offerDateRange);
 
-		
-		//Test Offers
-		Hotel[] hotels = {hotel};
+		Hotel[] hotels = { hotel };
 		Offers offers = new Offers();
 		offers.setHotel(hotels);
 		assertEquals(1, offers.getHotel().length);

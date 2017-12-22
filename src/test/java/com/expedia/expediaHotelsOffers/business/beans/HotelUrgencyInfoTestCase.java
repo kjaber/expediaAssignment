@@ -11,7 +11,6 @@ public class HotelUrgencyInfoTestCase extends TestCase {
 	}
 
 	public void testSettersAndGetters() {
-		// Test HotelUrgencyInfo
 		HotelUrgencyInfo hotelUrgencyInfo = new HotelUrgencyInfo();
 
 		hotelUrgencyInfo.setAirAttachEnabled(false);

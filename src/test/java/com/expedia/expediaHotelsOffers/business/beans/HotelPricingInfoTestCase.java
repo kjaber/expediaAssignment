@@ -11,7 +11,6 @@ public class HotelPricingInfoTestCase extends TestCase {
 	}
 
 	public void testSettersAndGetters() {
-		// Test HotelPricingInfo
 		HotelPricingInfo hotelPricingInfo = new HotelPricingInfo();
 		hotelPricingInfo.setAveragePriceValue(180.12);
 		hotelPricingInfo.setCrossOutPriceValue(776.37);

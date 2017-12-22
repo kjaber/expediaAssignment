@@ -16,14 +16,10 @@ public class URLManagerTestCase extends TestCase {
 	public void testGetExpediaJSON() {
 		URL defaultURL = manager.getURL();
 		assertNotNull(defaultURL);
-		//assertEquals(				"https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel",				defaultURL.getProtocol() + "://" + defaultURL.getAuthority() + defaultURL.getFile());
-
 		manager.setURL("https://www.expedia.com/");
 
 		URL expediaURL = manager.getURL();
 		assertNotNull(expediaURL);
-		//assertEquals("https://www.expedia.com/",				expediaURL.getProtocol() + "://" + expediaURL.getAuthority() + expediaURL.getFile());
-
 	}
 
 	@Override

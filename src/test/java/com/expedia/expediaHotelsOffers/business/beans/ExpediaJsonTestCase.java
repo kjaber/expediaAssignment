@@ -15,9 +15,6 @@ import com.expedia.expediaHotelsOffers.business.beans.UserInfo;
 
 import junit.framework.TestCase;
 
-/*
- * This class was created to test all beans classes
- */
 
 public class ExpediaJsonTestCase extends TestCase {
 	ExpediaJson expediaJson = null;
@@ -29,22 +26,19 @@ public class ExpediaJsonTestCase extends TestCase {
 	}
 
 	public void testSettersAndGetters() {
-		// Test OfferInfo
+		
 		OfferInfo offerInfo = new OfferInfo();
 		offerInfo.setCurrency("USD");
 		offerInfo.setLanguage("en_US");
 		offerInfo.setSiteID(1);
 
-		// Test Persona
 		Persona persona = new Persona();
 		persona.setPersonaType("Others");
 
-		// Test UserInfo
 		UserInfo userInfo = new UserInfo();
 		userInfo.setPersona(persona);
 		userInfo.setUserId("TestID");
 
-		// Test Destination
 		Destination destination = new Destination();
 		destination.setAssociatedMultiCityRegionId(251512);
 		destination.setCity("Miami");
@@ -56,7 +50,6 @@ public class ExpediaJsonTestCase extends TestCase {
 		destination.setShortName("Miami");
 		destination.setTla("FLL");
 
-		// Test hotelInfo
 		HotelInfo hotelInfo = new HotelInfo();
 		hotelInfo.setHotelCity("Sunny Isles Beach");
 		hotelInfo.setHotelCountryCode("USA");
@@ -77,7 +70,6 @@ public class ExpediaJsonTestCase extends TestCase {
 		hotelInfo.setIsOfficialRating(false);
 		hotelInfo.setLocalizedHotelName("Ocean Reserve OceanView Sunny Isles Luxury Condos");
 
-		// Test HotelPricingInfo
 		HotelPricingInfo hotelPricingInfo = new HotelPricingInfo();
 		hotelPricingInfo.setAveragePriceValue(180.12);
 		hotelPricingInfo.setCrossOutPriceValue(776.37);
@@ -87,7 +79,6 @@ public class ExpediaJsonTestCase extends TestCase {
 		hotelPricingInfo.setPercentSavings(76.8);
 		hotelPricingInfo.setTotalPriceValue(720.48);
 
-		// Test HotelUrgencyInfo
 		HotelUrgencyInfo hotelUrgencyInfo = new HotelUrgencyInfo();
 
 		hotelUrgencyInfo.setAirAttachEnabled(false);
@@ -99,14 +90,12 @@ public class ExpediaJsonTestCase extends TestCase {
 		hotelUrgencyInfo.setNumberOfPeopleViewing(7);
 		hotelUrgencyInfo.setNumberOfRoomsLeft(11);
 
-		// Test HotelUrls
 		HotelUrls hotelUrls = new HotelUrls();
 		hotelUrls.setHotelInfositeUrl(
 				"https%3A%2F%2Fwww.expedia.com%2Fgo%2Fhotel%2Finfo%2F10980182%2F2018-01-25%2F2018-01-29");
 		hotelUrls.setHotelSearchResultUrl(
 				"https%3A%2F%2Fwww.expedia.com%2Fgo%2Fhotel%2Fsearch%2FDestination%2F2018-01-25%2F2018-01-29%3FSearchType%3DDestination%26CityName%3DSunny+Isles+Beach%26RegionId%3D178286%26Selected%3D10980182");
 
-		// Test OfferDateRange
 		int[] startDate = { 2018, 1, 25 };
 		int[] endDate = { 2018, 1, 29 };
 		OfferDateRange offerDateRange = new OfferDateRange();
@@ -114,7 +103,6 @@ public class ExpediaJsonTestCase extends TestCase {
 		offerDateRange.setTravelEndDate(endDate);
 		offerDateRange.setTravelStartDate(startDate);
 
-		// Test Hotel
 		Hotel hotel = new Hotel();
 		hotel.setDestination(destination);
 		hotel.setHotelInfo(hotelInfo);
@@ -123,18 +111,18 @@ public class ExpediaJsonTestCase extends TestCase {
 		hotel.setHotelUrls(hotelUrls);
 		hotel.setOfferDateRange(offerDateRange);
 
-		// Test Offers
 		Hotel[] hotels = { hotel };
 		Offers offers = new Offers();
 		offers.setHotel(hotels);
 
-		// Test ExpediaJson
 		expediaJson.setOfferInfo(offerInfo);
 		expediaJson.setOffers(offers);
 		expediaJson.setUserInfo(userInfo);
+		
 		assertNotNull(expediaJson.getOfferInfo());
 		assertNotNull(expediaJson.getOffers());
 		assertNotNull(expediaJson.getUserInfo());
+		assertEquals("Sunny Isles Beach", expediaJson.getOffers().getHotel()[0].getHotelInfo().getHotelCity());
 
 	}
 

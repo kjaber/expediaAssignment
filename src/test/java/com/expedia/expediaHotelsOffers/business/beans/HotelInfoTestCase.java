@@ -11,7 +11,6 @@ public class HotelInfoTestCase extends TestCase {
 	}
 
 	public void testGettersAndSetters() {
-		// Test hotelInfo
 		HotelInfo hotelInfo = new HotelInfo();
 		hotelInfo.setHotelCity("Sunny Isles Beach");
 		hotelInfo.setHotelCountryCode("USA");

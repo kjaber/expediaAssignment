@@ -13,8 +13,7 @@ public class DestinationTestCase extends TestCase{
 	}
 	
 	public void testGettersAndSetters(){
-		// Test Destination	
-		
+	
 		destination.setAssociatedMultiCityRegionId(251512);
 		destination.setCity("Miami");
 		destination.setCountry("United States of America");

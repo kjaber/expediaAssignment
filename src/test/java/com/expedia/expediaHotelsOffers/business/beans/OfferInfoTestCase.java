@@ -11,7 +11,6 @@ public class OfferInfoTestCase extends TestCase {
 	}
 
 	public void testSettersAndGetters() {
-		// Test OfferInfo
 		OfferInfo offerInfo = new OfferInfo();
 		offerInfo.setCurrency("USD");
 		offerInfo.setLanguage("en_US");

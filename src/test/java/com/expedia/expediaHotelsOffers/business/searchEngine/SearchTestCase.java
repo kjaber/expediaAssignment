@@ -28,12 +28,14 @@ public class SearchTestCase extends TestCase {
 		super.setUp();
 		ExpediaJson expediajson = createExpediaJSON();
 		search = new Search(expediajson);
+		
 	}
 
 	/*
 	 * To test Country condition, We can modify it to add all search options that are supported in JSP
 	 */
-	public void testDoSearch() {
+	public void testCountrySearch() {
+
 		Map<String, String[]> filter = new HashMap<String, String[]>();
 		
 		List <Hotel> hotel1 = search.doSearch(filter); // without any filter
