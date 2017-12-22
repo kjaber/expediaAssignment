@@ -1,0 +1,146 @@
+package com.expedia.expediaHotelsOffers.business.beans;
+
+import com.expedia.expediaHotelsOffers.business.beans.Destination;
+import com.expedia.expediaHotelsOffers.business.beans.ExpediaJson;
+import com.expedia.expediaHotelsOffers.business.beans.Hotel;
+import com.expedia.expediaHotelsOffers.business.beans.HotelInfo;
+import com.expedia.expediaHotelsOffers.business.beans.HotelPricingInfo;
+import com.expedia.expediaHotelsOffers.business.beans.HotelUrgencyInfo;
+import com.expedia.expediaHotelsOffers.business.beans.HotelUrls;
+import com.expedia.expediaHotelsOffers.business.beans.OfferDateRange;
+import com.expedia.expediaHotelsOffers.business.beans.OfferInfo;
+import com.expedia.expediaHotelsOffers.business.beans.Offers;
+import com.expedia.expediaHotelsOffers.business.beans.Persona;
+import com.expedia.expediaHotelsOffers.business.beans.UserInfo;
+
+import junit.framework.TestCase;
+
+/*
+ * This class was created to test all beans classes
+ */
+
+public class ExpediaJsonTestCase extends TestCase {
+	ExpediaJson expediaJson = null;
+
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		expediaJson = new ExpediaJson();
+	}
+
+	public void testSettersAndGetters() {
+		// Test OfferInfo
+		OfferInfo offerInfo = new OfferInfo();
+		offerInfo.setCurrency("USD");
+		offerInfo.setLanguage("en_US");
+		offerInfo.setSiteID(1);
+
+		// Test Persona
+		Persona persona = new Persona();
+		persona.setPersonaType("Others");
+
+		// Test UserInfo
+		UserInfo userInfo = new UserInfo();
+		userInfo.setPersona(persona);
+		userInfo.setUserId("TestID");
+
+		// Test Destination
+		Destination destination = new Destination();
+		destination.setAssociatedMultiCityRegionId(251512);
+		destination.setCity("Miami");
+		destination.setCountry("United States of America");
+		destination.setLongName("Miami (and vicinity), Florida, United States of America");
+		destination.setNonLocalizedCity("Miami");
+		destination.setProvince("Florida");
+		destination.setRegionID(1203232);
+		destination.setShortName("Miami");
+		destination.setTla("FLL");
+
+		// Test hotelInfo
+		HotelInfo hotelInfo = new HotelInfo();
+		hotelInfo.setHotelCity("Sunny Isles Beach");
+		hotelInfo.setHotelCountryCode("USA");
+		hotelInfo.setHotelDestination("Sunny Isles Beach");
+		hotelInfo.setHotelDestinationRegionID(10405);
+		hotelInfo.setHotelGuestReviewRating(2.73);
+		hotelInfo.setHotelId(10980182);
+		hotelInfo.setHotelImageUrl(
+				"https://images.trvl-media.com/hotels/11000000/10990000/10980200/10980182/10980182_143_t.jpg");
+		hotelInfo.setHotelLatitude(25.954881);
+		hotelInfo.setHotelLongDestination("Sunny Isles Beach,FL,USA");
+		hotelInfo.setHotelLongitude(-80.120417);
+		hotelInfo.setHotelName("Ocean Reserve OceanView Sunny Isles Luxury Condos");
+		hotelInfo.setHotelProvince("FL");
+		hotelInfo.setHotelReviewTotal(26);
+		hotelInfo.setHotelStarRating("4.0");
+		hotelInfo.setHotelStreetAddress("19370-19390 Collins Avenue");
+		hotelInfo.setIsOfficialRating(false);
+		hotelInfo.setLocalizedHotelName("Ocean Reserve OceanView Sunny Isles Luxury Condos");
+
+		// Test HotelPricingInfo
+		HotelPricingInfo hotelPricingInfo = new HotelPricingInfo();
+		hotelPricingInfo.setAveragePriceValue(180.12);
+		hotelPricingInfo.setCrossOutPriceValue(776.37);
+		hotelPricingInfo.setCurrency("USD");
+		hotelPricingInfo.setDrr(false);
+		hotelPricingInfo.setOriginalPricePerNight(776.37);
+		hotelPricingInfo.setPercentSavings(76.8);
+		hotelPricingInfo.setTotalPriceValue(720.48);
+
+		// Test HotelUrgencyInfo
+		HotelUrgencyInfo hotelUrgencyInfo = new HotelUrgencyInfo();
+
+		hotelUrgencyInfo.setAirAttachEnabled(false);
+		hotelUrgencyInfo.setAirAttachRemainingTime(0);
+		hotelUrgencyInfo.setAlmostSoldStatus("ALMOST_SOLD");
+		hotelUrgencyInfo.setLastBookedTime(1511986530541L);
+		hotelUrgencyInfo.setLink("/Hotel-Search#selected=10980182");
+		hotelUrgencyInfo.setNumberOfPeopleBooked(0);
+		hotelUrgencyInfo.setNumberOfPeopleViewing(7);
+		hotelUrgencyInfo.setNumberOfRoomsLeft(11);
+
+		// Test HotelUrls
+		HotelUrls hotelUrls = new HotelUrls();
+		hotelUrls.setHotelInfositeUrl(
+				"https%3A%2F%2Fwww.expedia.com%2Fgo%2Fhotel%2Finfo%2F10980182%2F2018-01-25%2F2018-01-29");
+		hotelUrls.setHotelSearchResultUrl(
+				"https%3A%2F%2Fwww.expedia.com%2Fgo%2Fhotel%2Fsearch%2FDestination%2F2018-01-25%2F2018-01-29%3FSearchType%3DDestination%26CityName%3DSunny+Isles+Beach%26RegionId%3D178286%26Selected%3D10980182");
+
+		// Test OfferDateRange
+		int[] startDate = { 2018, 1, 25 };
+		int[] endDate = { 2018, 1, 29 };
+		OfferDateRange offerDateRange = new OfferDateRange();
+		offerDateRange.setLengthOfStay(4);
+		offerDateRange.setTravelEndDate(endDate);
+		offerDateRange.setTravelStartDate(startDate);
+
+		// Test Hotel
+		Hotel hotel = new Hotel();
+		hotel.setDestination(destination);
+		hotel.setHotelInfo(hotelInfo);
+		hotel.setHotelPricingInfo(hotelPricingInfo);
+		hotel.setHotelUrgencyInfo(hotelUrgencyInfo);
+		hotel.setHotelUrls(hotelUrls);
+		hotel.setOfferDateRange(offerDateRange);
+
+		// Test Offers
+		Hotel[] hotels = { hotel };
+		Offers offers = new Offers();
+		offers.setHotel(hotels);
+
+		// Test ExpediaJson
+		expediaJson.setOfferInfo(offerInfo);
+		expediaJson.setOffers(offers);
+		expediaJson.setUserInfo(userInfo);
+		assertNotNull(expediaJson.getOfferInfo());
+		assertNotNull(expediaJson.getOffers());
+		assertNotNull(expediaJson.getUserInfo());
+
+	}
+
+	@Override
+	protected void tearDown() throws Exception {
+		super.tearDown();
+	}
+
+}
