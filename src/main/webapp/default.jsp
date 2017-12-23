@@ -160,66 +160,28 @@ tr:nth-child(even) {
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 <script type="text/javascript">
-	$(function() {
-		$("#datepicker").datepicker({
-			dateFormat : 'yy-mm-dd'
-		}).val();
-		$("#datepicker2").datepicker({
-			dateFormat : 'yy-mm-dd'
-		}).val();
-		$("#datepicker3").datepicker({
-			dateFormat : 'yy-mm-dd'
-		}).val();
-		$("#datepicker4").datepicker({
-			dateFormat : 'yy-mm-dd'
-		}).val();
-
-	});
-
-	function updateMinGuestRate(val) {
+	
+	function updateMaxRate(val,elementID) {
 		if (val < 0) {
-			document.getElementById('uploadedMinGuestRate').innerHTML = "Min Rate(No Filter)";
+			document.getElementById(elementID).innerHTML = "Max Rate(No Filter)";
 		} else {
-			document.getElementById('uploadedMinGuestRate').innerHTML = "Min Rate="
+			document.getElementById(elementID).innerHTML = "Max Rate="
 					+ val;
 		}
 	}
 
-	function updateMaxGuestRate(val) {
+	function updateMinRate(val,elementID) {
 		if (val < 0) {
-			document.getElementById('uploadedMaxGuestRate').innerHTML = "Max Rate(No Filter)";
+			document.getElementById(elementID).innerHTML = "Min Rate(No Filter)";
 		} else {
-			document.getElementById('uploadedMaxGuestRate').innerHTML = "Max Rate="
+			document.getElementById(elementID).innerHTML = "Min Rate="
 					+ val;
 		}
 	}
 
-	function updateMinHotelRate(val) {
-		if (val < 0) {
-			document.getElementById('uploadedMinHotelRate').innerHTML = "Min Rate(No Filter)";
-		} else {
-			document.getElementById('uploadedMinHotelRate').innerHTML = "Min Rate="
-					+ val;
-		}
-	}
 
-	function updateMaxHotelRate(val) {
-		if (val < 0) {
-			document.getElementById('uploadedMaxHotelRate').innerHTML = "Max Rate(No Filter)";
-		} else {
-			document.getElementById('uploadedMaxHotelRate').innerHTML = "Max Rate="
-					+ val;
-		}
-	}
 
-	function updateMaxTotalRate(val) {
-		if (val < 0) {
-			document.getElementById('uploadedMaxHotelRate').innerHTML = "Max Rate(No Filter)";
-		} else {
-			document.getElementById('uploadedMaxHotelRate').innerHTML = "Max Rate="
-					+ val;
-		}
-	}
+	
 </script>
 </head>
 <!-- **************************************************************************************************************** -->
@@ -242,29 +204,32 @@ tr:nth-child(even) {
 					name="hotelName" placeholder="Hotel Name">
 
 				<h4>Star Rate</h4>
-				<!-- assum that if the value is 0 or .5 there is no validation -->
+				<!-- assume that if the value is 0 or .5 there is no validation -->
 				<input type="range" name="minStarRate" min="-1" max="5" step=".5"
-					value="-1" onchange="updateMinHotelRate(this.value);"> <label
-					id="uploadedMinHotelRate">Min Rate(No Filter)</label> <input
+					value="-1" onchange="updateMinRate(this.value,'uploadedMinHotelRate');"> <label
+					id="uploadedMinHotelRate">Min Rate(No Filter)</label> 
+				<input
 					type="range" name="maxStarRate" min="-1" max="5" step=".5"
-					value="-1" onchange="updateMaxHotelRate(this.value);"> <label
+					value="-1" onchange="updateMaxRate(this.value,'uploadedMaxHotelRate');"> <label
 					id="uploadedMaxHotelRate">Max Rate(No Filter)</label>
 
 
 				<h4>Guest Rate</h4>
-				<!-- assum that if the value is 0 or .5 there is no validation -->
+				<!-- assume that if the value is 0 or .5 there is no validation -->
 				<input type="range" name="minGuestRate" min="-1" max="5" step=".5"
-					value="-1" onchange="updateMinGuestRate(this.value);"> <label
-					id="uploadedMinGuestRate">Min Rate(No Filter)</label> <input
+					value="-1" onchange="updateMinRate(this.value,'uploadedMinGuestRate');"> <label
+					id="uploadedMinGuestRate">Min Rate(No Filter)</label> 
+				<input
 					type="range" name="maxGuestRate" min="-1" max="5" step=".5"
-					value="-1" onchange="updateMaxGuestRate(this.value);"> <label
+					value="-1" onchange="updateMaxRate(this.value,'uploadedMaxGuestRate');"> <label
 					id="uploadedMaxGuestRate">Max Rate(No Filter)</label>
 
 
 				<h4>Total Rate</h4>
-				<!-- assum that if the value is 0 or .5 there is no validation -->
+				
 				<input type="number" name="minTotalRate" value="" pattern="[0-9]"
-					min="0" placeholder="Min Total Rate"> <input type="number"
+					min="0" placeholder="Min Total Rate">
+				<input type="number"
 					name="maxTotalRate" value="" pattern="[0-9]" min="0"
 					placeholder="Max Total Rate">
 
@@ -274,29 +239,35 @@ tr:nth-child(even) {
 				</legend>
 
 				<h4>Check in</h4>
-
 				<input type="date" name="minStartDate" placeholder="Min(YYYY-MM-DD)"
 					onfocusout="(this.type='text')"
 					pattern="[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}"
-					title="Enter a date in this formart YYYY-MM-DD" id="datepicker">
+					title="Enter a date in this formart YYYY-MM-DD" >
 				<input type="date" name="maxStartDate" placeholder="Max(YYYY-MM-DD)"
 					onfocusout="(this.type='text')"
 					pattern="[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}"
-					title="Enter a date in this formart YYYY-MM-DD" id="datepicker2">
+					title="Enter a date in this formart YYYY-MM-DD" >
+				
 				<h4>Check out</h4>
-				<input type="date" name="minEndDate" value=""
+				<input type="date" name="minEndDate" 
 					placeholder="Min(YYYY-MM-DD)" onfocusout="(this.type='text')"
 					pattern="[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}"
-					title="Enter a date in this formart YYYY-MM-DD" id="datepicker3">
-				<input type="date" name="maxEndDate" value=""
+					title="Enter a date in this formart YYYY-MM-DD" >
+				
+				<input type="date" name="maxEndDate"
 					placeholder="Max(YYYY-MM-DD)" onfocusout="(this.type='text')"
 					pattern="[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}"
-					title="Enter a date in this formart YYYY-MM-DD" id="datepicker4">
+					title="Enter a date in this formart YYYY-MM-DD">
+				
 				<h4>Length of Stay</h4>
 				<input type="number" name="lengthOfStay" value="" pattern="[0-9]"
-					min="0"> <input type="submit" value="Search" />
-
-
+					min="0"> 
+					
+				<input type="submit" value="Search" />
+				
+				
+				<a href="<%= getServletContext().getContextPath()+ "/"	%> ">Rest Result</a>
+		
 
 				<table>
 

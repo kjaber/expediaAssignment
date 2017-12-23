@@ -29,15 +29,20 @@ This web application was created by eclipse using maven with these specification
 
 2- in you eclipse import the project as maven project
 
-3- add the project in you server (tomcat)
+3- Build maven projectv
 
-4- in your browser, hit "[server name]:[port]/expediahotelsfinder/"
+4- add the project in you server (tomcat)
+
+5- in your browser, hit "[server name]:[port]/expediahotelsfinder/"
 
 
 ## Known Issues 
 1- Json site URL is static in code: https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel
 It can be better if i created a properties file to set the path dynamically
 
-2- in the JSP page, I need to add a new action to reset the result, but for now we can update the url or click in search again, or just add a new conditions in the form field and click search
 
-3-
+
+## Assumptions
+
+1- Star Rate and Guest Rate max value = 5 
+
