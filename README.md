@@ -31,7 +31,7 @@ This web application was created by eclipse using maven with these specification
 
 3- Build maven project
 
-4- add the project in you server (tomcat)
+4- add the project to you server (tomcat)
 
 5- in your browser, hit "[server name]:[port]/expediahotelsfinder/"
 
