@@ -35,13 +35,6 @@ public class HotelFinderListener extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		   
-	      // Set response content type
-	      //response.setContentType("text/html");
-
-	      // Actual logic goes here.
-	      //PrintWriter out = response.getWriter();
-	      //out.println("<h1>" + "from eclipse33" + "</h1>");
-	      
 		initExpediaJson(); // if we want to cash the json, jut move this line from doGet to init
 		
 		Filter filter = new Filter(request);
