@@ -29,7 +29,7 @@ This web application was created by eclipse using maven with these specification
 
 2- in you eclipse import the project as maven project
 
-3- Build maven projectv
+3- Build maven project
 
 4- add the project in you server (tomcat)
 
