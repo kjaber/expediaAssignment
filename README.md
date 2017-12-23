@@ -16,9 +16,9 @@ https://kamiliaexpediaassignment.herokuapp.com/
 ## Language and technologies
 This web application was created by eclipse using maven with these specifications.
 
-### Java 8 (used in search process using streaming java8 technology)
+### Java 8 
 
-### jackson (used to parsing json format)
+### jackson 
 
 ### jUnit
 
