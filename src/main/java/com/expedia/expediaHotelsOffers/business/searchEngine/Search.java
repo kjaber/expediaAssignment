@@ -33,6 +33,7 @@ public class Search {
 	public Search(ExpediaJson originalJSON) {
 		expediaJson = originalJSON;
 	}
+	
 
 	public List<Hotel> doSearch(Map<String, String[]> filters) {
 		Hotel[] hotels = expediaJson.getOffers().getHotel();
