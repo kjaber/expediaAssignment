@@ -1,5 +1,8 @@
 package com.expedia.expediaHotelsOffers.business.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class HotelInfo {
 	private int hotelId;
 	private String hotelName;

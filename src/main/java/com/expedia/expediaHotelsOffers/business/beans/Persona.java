@@ -1,5 +1,8 @@
 package com.expedia.expediaHotelsOffers.business.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Persona {
 	private String personaType;
 

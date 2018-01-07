@@ -1,7 +1,11 @@
 package com.expedia.expediaHotelsOffers.business.beans;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * This is the main object where we can get everything
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ExpediaJson {
 	private OfferInfo offerInfo;
 	private UserInfo userInfo;
