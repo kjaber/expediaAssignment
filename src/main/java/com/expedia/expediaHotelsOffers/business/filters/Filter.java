@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 public class Filter {
 	private HttpServletRequest request = null;
 
